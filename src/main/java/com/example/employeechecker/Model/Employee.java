@@ -1,20 +1,19 @@
 package com.example.employeechecker.Model;
 
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table
 @Data
 public class Employee extends BaseEntity {
 
 
-    private String Name;
+    private String name;
 
-    private String Surname;
+    private String surname;
 
     private String pcIdentifier;
 
