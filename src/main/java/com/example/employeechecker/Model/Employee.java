@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table
+@Table(name ="Employee")
 @Data
 public class Employee extends BaseEntity {
 
