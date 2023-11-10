@@ -51,6 +51,10 @@ public class UserService {
     return mapper.toDto(repository.save(mapper.toEntity(dto)));
   }
 
+  public  void deleteOneUser(Long username) {
+    repository.deleteById(username);
+  }
+
   public UserDto updateUser(UserDto dto) {
     var existing = getById(dto.getId());
     if (existing.isEmpty()) {

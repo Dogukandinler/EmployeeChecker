@@ -12,21 +12,33 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 public class UserController {
 
-  private final UserService userService;
+    private final UserService userService;
 
-  public UserController(UserService userService) {
-    this.userService = userService;
-  }
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
-  @GetMapping
-  public List<UserDto> getUsers() {
-    return userService.getUsers();
-  }
+    @GetMapping
+    public List<UserDto> getUsers() {
+        return userService.getUsers();
+    }
 
 
- // @PreAuthorize("hasAuthority('ADMIN')")
-  @PostMapping
-  public UserDto createUser(@Valid @RequestBody UserDto userDto) {
-    return userService.createUser(userDto);
-  }
+    // @PreAuthorize("hasAuthority('ADMIN')")
+    @PostMapping
+    public UserDto createUser(@Valid @RequestBody UserDto userDto) {
+        return userService.createUser(userDto);
+    }
+
+    @DeleteMapping("/{username}")
+    public void deleteOneEmployee(@PathVariable Long username) {
+        userService.deleteOneUser(username);
+    }
+
+    @PutMapping("/{Id}")
+    public UserDto updateUser(@PathVariable long Id, @RequestBody UserDto newUser) {
+        newUser.setId(Id);
+
+        return userService.updateUser(newUser);
+    }
 }
