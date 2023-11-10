@@ -1,0 +1,28 @@
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+server:
+  port: 8080
+spring:
+  application:
+    name: javainuse
+  datasource:
+    url: jdbc:mysql://localhost:3306/employeechecker?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+    username: root
+    password: 060920
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+
+jwt-variables:
+  EXPIRES_ACCESS_TOKEN_MINUTE: 9000
+  ISSUER: dev
+  KEY: asdqwe123+K3Y
