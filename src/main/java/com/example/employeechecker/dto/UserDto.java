@@ -14,7 +14,7 @@ public class UserDto extends BaseDto {
     private String name;
 
     @NotNull
-    private String usernamee;
+    private String username;
 
     @NotNull
     private String password;
