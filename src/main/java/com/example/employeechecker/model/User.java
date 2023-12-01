@@ -39,6 +39,12 @@ public class User extends BaseEntity implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private Set<Role> authorities;
 
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    @JoinTable(
+            joinColumns = @JoinColumn(name ="user_id",referencedColumnName = "id")
+    )
+    private Set<CaptchaResponse> captchaResponse;
+
     @Override
     public boolean isAccountNonExpired() {
         return true;

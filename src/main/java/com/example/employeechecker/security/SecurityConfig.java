@@ -39,7 +39,10 @@ public class SecurityConfig {
             .requestMatchers(
                 new AntPathRequestMatcher("/auth/**"),
                 new AntPathRequestMatcher("/public/**"),
+                new AntPathRequestMatcher("/mac/**"),
+                    new AntPathRequestMatcher("/captcha/**"),
                 new AntPathRequestMatcher("/h2-console/**"));
+
   }
 
   @Bean
