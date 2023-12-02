@@ -43,7 +43,7 @@ public class Startup implements CommandLineRunner {
         admin.setEmail("admin@mail.com");
         admin.setPassword("pass");
         admin.setAuthorities(Set.of(adminRole));
-        userService.createUser(admin);
+        userService.createSystemUser(admin);
 
         UserDto user = new UserDto();
         user.setName("user");
@@ -51,7 +51,7 @@ public class Startup implements CommandLineRunner {
         user.setPassword("pass");
         user.setEmail("user@mail.com");
         user.setAuthorities(Set.of(userRole));
-        userService.createUser(user);
+        userService.createSystemUser(user);
 
     }
 }

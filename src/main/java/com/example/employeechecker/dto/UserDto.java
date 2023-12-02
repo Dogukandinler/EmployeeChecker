@@ -24,7 +24,7 @@ public class UserDto extends BaseDto {
 
     private String macAddress;
 
-    private Set<CaptchaResponseDto> captchaResponseDto;
+    private Set<CaptchaResponseDto> captchaResponse;
 
 
     private Set<RoleDto> authorities;

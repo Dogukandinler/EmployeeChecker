@@ -50,6 +50,9 @@ public class UserService {
     dto.setPassword(passwordEncoder.encode(dto.getPassword()));
     return mapper.toDto(repository.save(mapper.toEntity(dto)));
   }
+  public UserDto createSystemUser(UserDto dto) {
+    return mapper.toDto(repository.save(mapper.toEntity(dto)));
+  }
 
   public  void deleteOneUser(Long username) {
     repository.deleteById(username);
