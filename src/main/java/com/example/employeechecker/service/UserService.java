@@ -51,6 +51,7 @@ public class UserService {
     return mapper.toDto(repository.save(mapper.toEntity(dto)));
   }
   public UserDto createSystemUser(UserDto dto) {
+    dto.setPassword(passwordEncoder.encode(dto.getPassword()));
     return mapper.toDto(repository.save(mapper.toEntity(dto)));
   }
 
